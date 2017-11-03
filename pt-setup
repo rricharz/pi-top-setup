@@ -41,6 +41,7 @@ def increase_brightness():
 # prepare root window
 root = Tk()
 root.title('pi-top Configuration')
+root.option_add('*font', '"Piboto Light" 12')
 
 # read current value of idletime in sec and convert to mins
 try:
