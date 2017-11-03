@@ -8,11 +8,6 @@ from os import system
 import os
 from tkinter import *
 
-# check for root privileges, needed to change timeout value
-if os.getuid()!= 0:
-    print('run with root privileges: sudo pt-setup')
-    quit()
-    
 idletime_path = '/etc/pi-top/pt-device-manager/screen-timeout'
 max_idletime = 60
 
@@ -24,10 +19,7 @@ def cancel():
 def set_idletime():
     idletime = w2.get()
     print('New idletime:', idletime, 'min')
-    idletime_fp = open(idletime_path, 'w')
-    idletime_fp.write(str(idletime * 60))
-    idletime_fp.close()
-    system('reboot')
+    system('pt-brightness -t ' + str(idletime * 60))
     quit()
     
 # decrease brightness
@@ -79,7 +71,7 @@ b2 = Button(root, text='Increase', command=increase_brightness)
 b2.grid(row=0, column=2, padx=5, pady=10, sticky=W)
 b3 = Button(root, text='Cancel', command=cancel)
 b3.grid(row=2, column=1, padx=5, pady=10)
-b4 = Button(root, text='Set new value and reboot', command=set_idletime)
+b4 = Button(root, text='OK', command=set_idletime)
 b4.grid(row=2, column=2, padx=5, pady=10)
 
 root.mainloop()

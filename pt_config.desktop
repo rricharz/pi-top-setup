@@ -3,5 +3,5 @@ Type=Application
 Name=pi-top Configuration
 GenericName=pi-top Configuration
 Icon=preferences-desktop
-Exec=sudo pt-setup
+Exec=pt-setup
 Categories=Settings
