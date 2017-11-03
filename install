@@ -1,0 +1,4 @@
+sudo cp pt-setup /usr/bin
+sudo chmod +x /usr/bin/pt-setup
+sudo cp pt_config.desktop /usr/share/applications
+echo "menu->Preferences->pi-top Configuration is now available"

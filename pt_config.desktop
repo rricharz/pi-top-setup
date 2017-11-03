@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=pi-top Configuration
+GenericName=pi-top Configuration
+Icon=setup
+Exec=sudo pt-setup
+Categories=Settings

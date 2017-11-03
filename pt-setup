@@ -1,0 +1,84 @@
+#! /usr/bin/python3
+
+# pt-setup
+
+# rricharz 2017
+
+from os import system
+import os
+from tkinter import *
+
+# check for root privileges, needed to change timeout value
+if os.getuid()!= 0:
+    print('run with root privileges: sudo pt-setup')
+    quit()
+    
+idletime_path = '/etc/pi-top/pt-device-manager/screen-timeout'
+max_idletime = 60
+
+# quit script, called by cancel button
+def cancel():
+    quit()
+
+# save new idletime value and reboot
+def set_idletime():
+    idletime = w2.get()
+    print('New idletime:', idletime, 'min')
+    idletime_fp = open(idletime_path, 'w')
+    idletime_fp.write(str(idletime * 60))
+    idletime_fp.close()
+    system('reboot')
+    quit()
+    
+# decrease brightness
+def decrease_brightness():
+    system('pt-brightness -d')
+
+# increase brightness
+def increase_brightness():
+    system('pt-brightness -i')
+
+# prepare root window
+root = Tk()
+root.title('pi-top Configuration')
+
+# read current value of idletime in sec and convert to mins
+try:
+    idletime_fp = open(idletime_path, 'r')
+    idletime = int(idletime_fp.read()) // 60
+except:
+    idletime = 0
+if idletime < 0:
+    idletime = 0
+if idletime > max_idletime:
+    idletime = max_idletime
+
+try:
+    idletime_fp.close()
+except:
+    pass
+
+print('Current idletime:', idletime, 'min')
+
+# display slider
+w1 = Label(root, text="Turn display off after")
+w1.grid(row=1, column=0, sticky=E+S)
+w2 = Scale(root, from_=0, to_=max_idletime, orient=HORIZONTAL)
+w2.set(idletime)
+w2.grid(row=1, column=1)
+w3 = Label(root, text="mins inactivity (0 to disable)")
+w3.grid(row=1, column=2, sticky=W+S)
+
+# display buttons
+w4 = Label(root, text="Screen brightness")
+w4.grid(row=0, column=0, sticky=W)
+b1 = Button(root, text='Decrease', command=decrease_brightness)
+b1.grid(row=0, column=1, padx=5, pady=10)
+b2 = Button(root, text='Increase', command=increase_brightness)
+b2.grid(row=0, column=2, padx=5, pady=10, sticky=W)
+b3 = Button(root, text='Cancel', command=cancel)
+b3.grid(row=2, column=1, padx=5, pady=10)
+b4 = Button(root, text='Set new value and reboot', command=set_idletime)
+b4.grid(row=2, column=2, padx=5, pady=10)
+
+root.mainloop()
