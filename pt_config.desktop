@@ -5,3 +5,5 @@ GenericName=pi-top Configuration
 Icon=preferences-desktop
 Exec=pt-setup
 Categories=Settings
+StartupNotify=false
+Terminal=false
