@@ -1,0 +1,3 @@
+sudo rm /usr/bin/pt-setup
+sudo rm /usr/share/applications/pt_config.desktop
+echo "menu->Preferences->pi-top Configuration has been uninstalled"
