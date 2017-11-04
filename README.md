@@ -1,6 +1,6 @@
 # pi-top-setup
 
-This repository includes information and programs to use Raspbian Stretch on th pi-top laptop
+This repository includes information and programs to use Raspbian Stretch on the pi-top laptop
 (version 1 and 2) and the pi-topCEED.
 
 The pi-top Device Manager, which handles the pi-top hardware (hub) and the pi-top accessories
@@ -73,4 +73,4 @@ can install pi-top Configuration from this repository as follows
 ```
 
 After installing this program, the sliders and buttons are available using
-menu->Preferences->pi-topConfiguration
+menu->Preferences->pi-top Configuration
