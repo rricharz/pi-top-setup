@@ -74,3 +74,5 @@ can install pi-top Configuration from this repository as follows
 
 After installing this program, the sliders and buttons are available using
 menu->Preferences->pi-top Configuration
+
+![Alt text](config.png?raw=true "menu item")
