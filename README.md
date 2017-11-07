@@ -5,8 +5,9 @@ This repository includes information and programs to use Raspbian Stretch on the
 
 The pi-top Device Manager, which handles the pi-top hardware (hub) and the pi-top accessories
 (pi-topSPEAKER and pi-topPULSE) is now available for Raspbian Stretch. This is the recommended
-way to use the pi-top with Raspbian. The documentation is
-[here](http:github.com/pi-top).
+way to use the pi-top with Raspbian. The documentation can be found at the
+[pi-top repository](http:github.com/pi-top). You can also find instructions there on how to install
+the pi-topSPEAKER, pi-topPULSE and Alexa service.
 
 > **Important!**
 > If you have used
