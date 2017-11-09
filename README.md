@@ -77,3 +77,32 @@ After installing this program, the sliders and buttons are available using
 menu->Preferences->pi-top Configuration
 
 ![Alt text](config.png?raw=true "menu item")
+
+**To uninstall pi-top Configuration**
+
+Open a terminal and type
+
+```
+  cd
+  cd Downloads/pi-top-setup
+  chmod +x uninstall
+  ./uninstall
+```
+
+**Only for experienced users: Optimizing performance**
+
+I found the following settings in the optional hardware interfaces section
+of /boot/config.txt optimal for my pi-top rev 1 laptop:
+
+```
+# Uncomment some or all of these to enable the optional hardware interfaces
+dtparam=spi=on
+dtparam=i2c1=on
+dtparam=i2c1_baudrate=50000
+dtparam=i2c_arm=on
+#dtparam=i2s=on
+
+# GPU settings
+gpu_mem=128
+```
+
