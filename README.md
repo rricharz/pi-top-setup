@@ -100,7 +100,7 @@ To install pt-input, open a terminal and type
 
 Wait a few seconds and then check whether the brightness keys work.
 
-** What to do if the brightness keys still do not work**
+**What to do if the brightness keys still do not work**
 
 If you have not yet installed the Device Manager, proceed as described at the
 top of this page. If you have already installed the Device Manager, pt-brightness
