@@ -3,11 +3,14 @@
 This repository includes information and programs to use Raspbian Stretch on the pi-top laptop
 (version 1 and 2) and the pi-topCEED.
 
+The help of @pi-top and especially @m-roberts to get this to work is very much appreciated.
+
 The pi-top Device Manager, which handles the pi-top hardware (hub) and the pi-top accessories
 (pi-topSPEAKER and pi-topPULSE) is now available for Raspbian Stretch. This is the recommended
 way to use the pi-top with Raspbian. The documentation can be found at the
 [pi-top repository](http:github.com/pi-top). You can also find instructions there on how to install
-the pi-topSPEAKER, pi-topPULSE and Alexa service.
+the pi-topSPEAKER, pi-topPULSE and Alexa service. The pi-top Device Manager
+also supports pushing the power button for a second as a means to turn the turn the pi-top off.
 
 > **Important!**
 > If you have used
@@ -77,6 +80,57 @@ After installing this program, the sliders and buttons are available using
 menu->Preferences->pi-top Configuration
 
 ![Alt text](config.png?raw=true "menu item")
+
+**Enable the brightness keys on the keyboard**
+
+Thanks to @m-roberts and @o355 for help to get this to work.
+
+The recommended way to enable the brightness keys is to install pt-input.
+The advantage of using pt-input is that the brightness keys also work when using
+the command line interface and not only on the desktop. Unfortunately,
+pt-input does not work properly on Raspbian Stretch as present, but a fix is
+described below
+
+To install pt-input, open a terminal and type
+
+```
+  sudo apt update
+  sudo apt install pt-input
+```
+
+Wait a few seconds and then check whether the brightness keys work.
+
+** What to do if the brightness keys still do not work**
+
+If you have not yet installed the Device Manager, proceed as described at the
+top of this page. If you have already installed the Device Manager, pt-brightness
+works, pt-input has been installed and the brightness keys still do not work,
+you have to fix pt-brightness to work properly on Raspbian Stretch:
+
+Download this repository if you have not already done so:
+
+```
+  cd
+  cd Downloads
+  git clone --depth 1 git://github.com/rricharz/pi-top-setup
+```
+
+Go into the downloaded folder and execute fix-pt-input:
+```
+  cd
+  cd Downloads
+  cd pi-top-setup
+  chmod +x fix-pt-input
+  ./fix-pt-input
+```
+
+Important: fix-pt-input might take several minutes to execute.
+Do not interrupt it during the installation!
+
+Experienced users can also modify any key on the keyboard by modifying the
+file /etc/pi-top/pt-input/keyboard-commands. As @o355 pointed out, one can
+boot the pi-top in the command line interface (cli) and then use showkey to
+get the proper keycode for any key on the keyboard.
 
 **To uninstall pi-top Configuration**
 
