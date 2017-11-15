@@ -81,7 +81,8 @@ can install pi-top Configuration from this repository as follows
 ```
 
 After installing this program, the sliders and buttons are available using
-menu->Preferences->pi-top Configuration
+menu->Preferences->pi-top Configuration. I recommend to keep pi-top-setup in
+Downloads. This makes future upgrading or uninstalling easier.
 
 ![Alt text](config.png?raw=true "menu item")
 
@@ -135,6 +136,18 @@ Experienced users can also modify any key on the keyboard by modifying the
 file /etc/pi-top/pt-input/keyboard-commands. As @o355 pointed out, one can
 boot the pi-top in the command line interface (cli) and then use showkey to
 get the proper keycode for any key on the keyboard.
+
+**To update pi-top Configuration to the latest version**
+
+Open a terminal and type
+
+```
+  cd
+  cd Downloads/pi-top-setup
+  git pull
+  ./install
+```
+
 
 **To uninstall pi-top Configuration**
 
