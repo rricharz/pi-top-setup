@@ -7,6 +7,9 @@
 from os import system
 import os
 from tkinter import *
+from pathlib import Path
+from os.path import expanduser
+import configparser
 
 idletime_path = '/etc/pi-top/pt-device-manager/screen-timeout'
 max_idletime = 60
@@ -29,11 +32,25 @@ def decrease_brightness():
 # increase brightness
 def increase_brightness():
     system('pt-brightness -i')
+    
+# get desktop font
+try:
+    config = configparser.ConfigParser()
+    configpath = expanduser("~") + "/.config/lxsession/LXDE-pi/desktop.conf"
+    print("Reading desktop font from file: " + configpath)
+    config.read(configpath)
+    desktopfont = config.get("GTK", "sGTK/FontName")
+except:
+    desktopfont = "Piboto Light 12"
+splitted=desktopfont.split()
+if len(splitted) > 2:
+    desktopfont = '"'+ splitted[0] + ' ' + splitted[1] + '" ' + splitted[2]
+print("Using desktop font: " + desktopfont)
 
 # prepare root window
 root = Tk()
 root.title('pi-top Configuration')
-root.option_add('*font', '"Piboto Light" 12')
+root.option_add('*font', desktopfont)
 
 # read current value of idletime in sec and convert to mins
 try:
