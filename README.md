@@ -28,6 +28,9 @@ pi-topPULSE. It can also be installed with the following commands:
   sudo apt install pt-hub
   sudo systemctl disable pt-display
 ```
+If you want to understand the consequences of the last line above (disable pt-display),
+see issue #2 in this repository.
+
 Make sure that spi is enabled in menu->Preferences->Raspberry Pi Configuration.
 
 Once the software is installed, you can obtain information from the pi-top hardware, and change
