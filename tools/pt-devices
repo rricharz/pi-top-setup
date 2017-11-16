@@ -1,0 +1,97 @@
+#! /usr/bin/python3
+# pt-devices: show hardware detected and enabled by pt-device-manager
+
+import zmq
+from ptcommon.ptdm_message import Message
+from ptcommon.common_ids import DeviceID
+
+zmq_socket = None
+
+
+def main():
+    try:
+        print("Devices and peripherals handled by pt-device-manager:")
+        print()
+        connect_to_socket()
+        message = get_device_id()
+        print_device_id(message)
+        for id in range(5):
+            message = get_peripheral_enabled(id)
+            print_peripheral_enabled(message, id)
+        cleanup()
+
+    except Exception as e:
+        print("Unable to get requested information from pt-device-manager: " + str(e))
+
+    finally:
+        cleanup()
+
+
+def connect_to_socket():
+    global zmq_socket
+
+    zmq_context_send = zmq.Context()
+    zmq_socket = zmq_context_send.socket(zmq.REQ)
+    zmq_socket.sndtimeo = 1000
+    zmq_socket.rcvtimeo = 1000
+    zmq_socket.connect("tcp://127.0.0.1:3782")
+
+
+def send_request(message_request_id, parameters):
+
+    message = Message.from_parts(message_request_id, parameters)
+    zmq_socket.send_string(message.to_string())
+
+    response_string = zmq_socket.recv_string()
+    return Message.from_string(response_string)
+
+
+def get_device_id():
+    message = Message.from_parts(Message.REQ_GET_DEVICE_ID, [])
+    zmq_socket.send_string(message.to_string())
+
+    response_string = zmq_socket.recv_string()
+    return Message.from_string(response_string)
+
+def get_peripheral_enabled(id):
+    message = Message.from_parts(Message.REQ_GET_PERIPHERAL_ENABLED, [id])
+    zmq_socket.send_string(message.to_string())
+
+    response_string = zmq_socket.recv_string()
+    return Message.from_string(response_string)
+
+
+def print_device_id(message):
+    if message.message_id() == Message.RSP_GET_DEVICE_ID:
+        if message.validate_parameters([int]):
+            device_id = message.parameters()
+            if int(device_id[0]) == DeviceID.pi_top:
+                print("Host device is pi-top v1")
+            elif int(device_id[0]) == DeviceID.pi_top_ceed:
+                print("Host device is pi-topCEED")
+            elif int(device_id[0]) == DeviceID.pi_top_2:
+                print("Host device is pi-top v2")
+            else:
+                print("Unknown host device")
+        else:
+            print("Unable to get valid device ID.")
+            
+def print_peripheral_enabled(message, id):
+    p_names = ['pi-topPULSE', 'pi-topSPEAKER-v1-left',  'pi-topSPEAKER-v1-mono',  'pi-topSPEAKER-v1-right',  'pi-topSPEAKER-v2']
+    if message.message_id() == Message.RSP_GET_PERIPHERAL_ENABLED:
+        if message.validate_parameters([int]):
+            p_enabled = message.parameters()
+
+            if p_enabled[0] == '1':
+                print("Peripheral " + p_names[id] + " is currently enabled")
+        else:
+            print("Unable to get valid peripheral enabled.")
+
+
+def cleanup():
+    if (zmq_socket is not None):
+        zmq_socket.close(0)
+
+
+if __name__ == "__main__":
+    main()

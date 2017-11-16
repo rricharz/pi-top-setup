@@ -1,7 +1,18 @@
 #!/bin/bash
-# install pi-top-Configuration
+# install pi-top-Configuration and tools
 
 sudo cp pt-setup /usr/bin
 sudo chmod +x /usr/bin/pt-setup
 sudo cp pt_config.desktop /usr/share/applications
 echo "menu->Preferences->pi-top Configuration is now available"
+
+echo "Installing additional tools:"
+
+sudo cp tools/pt-log /usr/bin
+sudo chmod +x /usr/bin/pt-log
+echo "pt-log has been installed"
+
+sudo cp tools/pt-devices /usr/bin
+sudo chmod +x /usr/bin/pt-devices
+echo "pt-devices has been installed"
+

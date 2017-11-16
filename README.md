@@ -86,6 +86,17 @@ Downloads. This makes future upgrading or uninstalling easier.
 
 ![Alt text](config.png?raw=true "menu item")
 
+**Additional tools to debug problems with the device manager**
+
+If you install pi-top Configuration (instructions above), the following additional
+tools are also installed: 
+
+*pt-log* displays the log of pt-device-manager (current session).
+
+*pt-devices* displays the current host device and peripherals handled by
+pt-device-manager.
+
+
 **Enable the brightness keys on the keyboard**
 
 Thanks to @m-roberts and @o355 for help to get this to work.
