@@ -4,9 +4,9 @@ sudo rm /usr/bin/pt-setup
 sudo rm /usr/share/applications/pt_config.desktop
 echo "menu->Preferences->pi-top Configuration has been uninstalled"
 
-sudo rm /usr/bin/pt-log
+rm ~/bin/pt-log
 echo "pt-log has been unistalled"
 
-sudo rm /usr/bin/pt-devices
+rm ~/bin/pt-devices
 echo "pt-devices has been unistalled"
 

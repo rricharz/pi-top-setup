@@ -1,5 +1,6 @@
 #! /usr/bin/python3
 # pt-devices: show hardware detected and enabled by pt-device-manager
+# rricharz 2017
 
 import zmq
 from ptcommon.ptdm_message import Message
@@ -11,7 +12,6 @@ zmq_socket = None
 def main():
     try:
         print("Devices and peripherals handled by pt-device-manager:")
-        print()
         connect_to_socket()
         message = get_device_id()
         print_device_id(message)

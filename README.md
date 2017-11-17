@@ -10,7 +10,7 @@ The pi-top Device Manager, which handles the pi-top hardware (hub) and the pi-to
 way to use the pi-top with Raspbian. The documentation can be found at the
 [pi-top repository](http:github.com/pi-top). You can also find instructions there on how to install
 the pi-topSPEAKER, pi-topPULSE and Alexa service. The pi-top Device Manager
-also supports pushing the power button for a second as a means to turn the turn the pi-top off.
+also supports pushing the power button for a second as a means to turn the pi-top off.
 
 > **Important!**
 > If you have used

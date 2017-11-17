@@ -8,11 +8,14 @@ echo "menu->Preferences->pi-top Configuration is now available"
 
 echo "Installing additional tools:"
 
-sudo cp tools/pt-log /usr/bin
-sudo chmod +x /usr/bin/pt-log
+# create bin directory in ~, if it does not exist
+[ ! -d ~/bin  ] && mkdir ~/bin
+
+cp tools/pt-log ~/bin
+chmod +x ~/bin/pt-log
 echo "pt-log has been installed"
 
-sudo cp tools/pt-devices /usr/bin
-sudo chmod +x /usr/bin/pt-devices
+cp tools/pt-devices ~/bin
+chmod +x ~/bin/pt-devices
 echo "pt-devices has been installed"
 

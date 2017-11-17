@@ -1,7 +1,6 @@
 #! /usr/bin/python3
-
+# gui to set screen timeout and brightness
 # pt-setup
-
 # rricharz 2017
 
 from os import system
@@ -18,7 +17,7 @@ max_idletime = 60
 def cancel():
     quit()
 
-# save new idletime value and reboot
+# save new idletime value
 def set_idletime():
     idletime = w2.get()
     print('New idletime:', idletime, 'min')
