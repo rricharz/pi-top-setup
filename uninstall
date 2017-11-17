@@ -10,3 +10,6 @@ echo "pt-log has been unistalled"
 rm ~/bin/pt-devices
 echo "pt-devices has been unistalled"
 
+rm ~/bin/audiotest
+echo "audiotest has been unistalled"
+

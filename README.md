@@ -96,6 +96,8 @@ tools are also installed:
 *pt-devices* displays the current host device and peripherals handled by
 pt-device-manager.
 
+*audiotest* plays a short sound on the speaker.
+
 
 **Enable the brightness keys on the keyboard**
 

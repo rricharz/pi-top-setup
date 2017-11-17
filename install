@@ -19,3 +19,7 @@ cp tools/pt-devices ~/bin
 chmod +x ~/bin/pt-devices
 echo "pt-devices has been installed"
 
+cp tools/audiotest ~/bin
+chmod +x ~/bin/audiotest
+echo "audiotest has been installed"
+
