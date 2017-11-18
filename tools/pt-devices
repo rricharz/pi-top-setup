@@ -5,6 +5,7 @@
 import zmq
 from ptcommon.ptdm_message import Message
 from ptcommon.common_ids import DeviceID
+import platform
 
 zmq_socket = None
 
@@ -12,6 +13,7 @@ zmq_socket = None
 def main():
     try:
         print("Devices and peripherals handled by pt-device-manager:")
+        print("OS release: " + platform.release())
         connect_to_socket()
         message = get_device_id()
         print_device_id(message)
