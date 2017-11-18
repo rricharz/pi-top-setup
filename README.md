@@ -98,6 +98,16 @@ pt-device-manager.
 
 *audiotest* plays a short sound on the speaker.
 
+Example output of *pt-devices*:
+```
+  pi@pitop:~ $ pt-devices
+  Devices and peripherals handled by pt-device-manager:
+  OS release: 4.9.59-v7+
+  Host device is pi-top v1
+  Peripheral pi-topSPEAKER-v1-mono is currently enabled
+  pi@pitop:~ $
+```
+
 
 **Enable the brightness keys on the keyboard**
 
