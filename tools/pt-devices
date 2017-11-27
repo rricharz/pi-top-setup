@@ -1,6 +1,6 @@
 #! /usr/bin/python3
 # pt-devices: show hardware detected and enabled by pt-device-manager
-# rricharz 2017
+# by @rricharz 2017
 
 import zmq
 from ptcommon.ptdm_message import Message
@@ -23,7 +23,7 @@ def main():
         cleanup()
 
     except Exception as e:
-        print("Unable to get requested information from pt-device-manager: " + str(e))
+        print("Unable to get information from pt-device-manager: " + str(e))
 
     finally:
         cleanup()
@@ -55,6 +55,7 @@ def get_device_id():
     response_string = zmq_socket.recv_string()
     return Message.from_string(response_string)
 
+
 def get_peripheral_enabled(id):
     message = Message.from_parts(Message.REQ_GET_PERIPHERAL_ENABLED, [id])
     zmq_socket.send_string(message.to_string())
@@ -77,9 +78,12 @@ def print_device_id(message):
                 print("Unknown host device")
         else:
             print("Unable to get valid device ID.")
-            
+
+
 def print_peripheral_enabled(message, id):
-    p_names = ['pi-topPULSE', 'pi-topSPEAKER-v1-left',  'pi-topSPEAKER-v1-mono',  'pi-topSPEAKER-v1-right',  'pi-topSPEAKER-v2']
+    p_names = ['pi-topPULSE', 'pi-topSPEAKER-v1-left',
+               'pi-topSPEAKER-v1-mono',
+               'pi-topSPEAKER-v1-right',  'pi-topSPEAKER-v2']
     if message.message_id() == Message.RSP_GET_PERIPHERAL_ENABLED:
         if message.validate_parameters([int]):
             p_enabled = message.parameters()
