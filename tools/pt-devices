@@ -72,7 +72,7 @@ def print_device_id(message):
                 print("Host device is pi-top v1")
             elif int(device_id[0]) == DeviceID.pi_top_ceed:
                 print("Host device is pi-topCEED")
-            elif int(device_id[0]) == DeviceID.pi_top_2:
+            elif int(device_id[0]) == DeviceID.pi_top_v2:
                 print("Host device is pi-top v2")
             else:
                 print("Unknown host device")
