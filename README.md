@@ -38,8 +38,12 @@ certain parameters:
 
 **Battery**
 
-If you have a pi-top-laptop, the information about the state of the battery can be obtained with
-the command
+>Starting with the latest upgrade of Raspian Stretch (December 1, 2017) a new battery icon
+>*Battery (pi-top / laptop)* should be automatically installed and enabled on the pi-top rev 1.
+>If this battery icon does not show up on your pi-top, you can use the following means to
+>display battery information.
+
+The information about the state of the battery can be obtained with the command
 
 ```
   pt-battery
