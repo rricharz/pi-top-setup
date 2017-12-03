@@ -1,7 +1,7 @@
 #! /usr/bin/python3
 # gui to set screen timeout and brightness
 # pt-setup
-# rricharz 2017
+# rricharz 2017 <rricharz77@gmail.com>
 
 from os import system
 import os
