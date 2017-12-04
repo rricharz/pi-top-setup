@@ -39,8 +39,9 @@ certain parameters:
 
 **Battery**
 
->Starting with the latest upgrade of Raspian Stretch (December 1, 2017) a new battery icon
->*Battery (pi-top / laptop)* should be automatically installed and enabled on the pi-top rev 1.
+>Starting with the latest upgrade of Raspian Stretch (December 1, 2017) a battery icon
+>should be automatically installed and enabled on the pi-top rev 1.
+>The apt package *lxplug-ptbatt* is part of the apt package *raspberry-pi-ui-mods*.
 >If this battery icon does not show up on your pi-top, you can use the following means to
 >display battery information.
 
