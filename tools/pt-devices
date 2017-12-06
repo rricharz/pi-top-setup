@@ -5,9 +5,39 @@
 import zmq
 from ptcommon.ptdm_message import Message
 from ptcommon.common_ids import DeviceID
+from ptcommon.i2c_device import I2CDevice
 import platform
 
 zmq_socket = None
+
+
+class ADCcheck():
+
+    _device_address = 0x2A
+    _channel_count = 6
+    _adc_ratio = 20
+
+    def __init__(self, i2c_device_name="/dev/i2c-1"):
+
+        self._i2c_device_name = i2c_device_name
+        self._device = None
+        self._error_array = [-1] * self._channel_count
+
+    def connect(self):
+
+        try:
+            self._device = I2CDevice(self._i2c_device_name, self._device_address)
+            self._device.connect()
+
+        except Exception as e:
+            return False
+
+        return True
+
+    def disconnect(self):
+
+        if (self._device is not None):
+            self._device.disconnect()
 
 
 def main():
@@ -20,13 +50,17 @@ def main():
         for id in range(5):
             message = get_peripheral_enabled(id)
             print_peripheral_enabled(message, id)
-        cleanup()
 
     except Exception as e:
         print("Unable to get information from pt-device-manager: " + str(e))
 
     finally:
         cleanup()
+    proto = ADCcheck()
+    if proto.connect():
+        print("Pi-top inventor´s kit is installed")
+        proto.disconnect()
+    cleanup()
 
 
 def connect_to_socket():
