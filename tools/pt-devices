@@ -58,7 +58,7 @@ def main():
         cleanup()
     proto = ADCcheck()
     if proto.connect():
-        print("Pi-top inventor´s kit is installed")
+        print("Peripheral pi-topPROTO+ is currently connected")
         proto.disconnect()
     cleanup()
 
