@@ -37,6 +37,7 @@ is enabled in menu->Preferences->Raspberry Pi Configuration.
 Once the software is installed, you can obtain information from the pi-top hardware, and change
 certain parameters:
 
+
 **Battery**
 
 >Starting with the latest upgrade of Raspian Stretch (December 1, 2017) a battery icon
@@ -65,7 +66,11 @@ If you prefer to see a battery icon with the current charge of the battery in th
 system tray section of the desktop panel, you can install
 [pi-top-battery-widget](http:github.com/rricharz/pi-top-battery-widget)
 
+
 **Screen**
+
+On the pi-top version 2 the brightness keys work with out-of-the-box Raspbian Stretch.
+On the pi-top version 1 see *Enable the brightness keys* below.
 
 You can control the screen brightness and the timeout before the screen blanks with
 the command pt-brightness. To get information on how to use pt-brightness, type
@@ -92,6 +97,7 @@ Downloads. This makes future upgrading or uninstalling easier.
 
 ![Alt text](config.png?raw=true "menu item")
 
+
 **Additional tools to debug problems with the device manager**
 
 If you install pi-top Configuration (instructions above), the following additional
@@ -115,7 +121,7 @@ Example output of *pt-devices*:
 ```
 
 
-**Enable the brightness keys on the keyboard**
+**Enable the brightness keys on the pi-top (version 1) keyboard**
 
 Thanks to @m-roberts and @o355 for help to get this to work.
 
@@ -134,7 +140,8 @@ To install pt-input, open a terminal and type
 
 Wait a few seconds and then check whether the brightness keys work.
 
-**What to do if the brightness keys still do not work**
+
+**What to do if the brightness keys on the pi-top (version 1) still do not work**
 
 If you have not yet installed the Device Manager, proceed as described at the
 top of this page. If you have already installed the Device Manager, pt-brightness
@@ -165,6 +172,7 @@ Experienced users can also modify any key on the keyboard by modifying the
 file /etc/pi-top/pt-input/keyboard-commands. As @o355 pointed out, one can
 boot the pi-top in the command line interface (cli) and then use showkey to
 get the proper keycode for any key on the keyboard.
+
 
 **To update pi-top Configuration to the latest version**
 
