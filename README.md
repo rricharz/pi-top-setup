@@ -123,55 +123,31 @@ Example output of *pt-devices*:
 
 **Enable the brightness keys on the pi-top (version 1) keyboard**
 
-Thanks to @m-roberts and @o355 for help to get this to work.
+Unfortunately Raspbian Stretch 2017-11-29 introduced a small inconsistency
+with the pi-top device management software affecting the brightness keys on
+the pi-top (version 1). It is unclear at present how and when this will be fixed.
+You can wait until this inconsistency will hopenfully be fixed, or implement
+the following workaround.
 
-The recommended way to enable the brightness keys is to install pt-input.
-The advantage of using pt-input is that the brightness keys also work when using
-the command line interface and not only on the desktop. Unfortunately,
-pt-input does not work properly on Raspbian Stretch as present, but a fix is
-described below
-
-To install pt-input, open a terminal and type
-
-```
-  sudo apt update
-  sudo apt install pt-input
-```
-
-Wait a few seconds and then check whether the brightness keys work.
-
-
-**What to do if the brightness keys on the pi-top (version 1) still do not work**
-
-If you have not yet installed the Device Manager, proceed as described at the
-top of this page. If you have already installed the Device Manager, pt-brightness
-works, pt-input has been installed and the brightness keys still do not work,
-you have to fix pt-brightness to work properly on Raspbian Stretch:
-
-Download this repository if you have not already done so:
-
+Workaround:
+Open a terminal and type
 ```
   cd
-  cd Downloads
-  git clone --depth 1 git://github.com/rricharz/pi-top-setup
+  cd .config/openbox
+  cp lxde-pi-rc.xml lxde-pi-rc.xml.backup
+  sudo leafpad lxde-pi-rc.xml
 ```
 
-Go into the downloaded folder and execute fix-pt-input:
+Search for brightness in this file.
+Change the line *<command>brightness decrease</command>* to *<command>pt-brightness -d</command>*
+and a bit further down *<command>brightness increase</command>* to *<command>pt-brightness -i</command>*
+
+If you want to undo this change, you can open a terminal and type
 ```
   cd
-  cd Downloads
-  cd pi-top-setup
-  chmod +x fix-pt-input
-  ./fix-pt-input
+  cd .config/openbox
+  cp lxde-pi-rc.xml.backup lxde-pi-rc.xml
 ```
-
-Important: fix-pt-input might take several minutes to execute.
-Do not interrupt it during the installation!
-
-Experienced users can also modify any key on the keyboard by modifying the
-file /etc/pi-top/pt-input/keyboard-commands. As @o355 pointed out, one can
-boot the pi-top in the command line interface (cli) and then use showkey to
-get the proper keycode for any key on the keyboard.
 
 
 **To update pi-top Configuration to the latest version**
