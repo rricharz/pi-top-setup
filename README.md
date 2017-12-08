@@ -130,8 +130,9 @@ You can wait until this inconsistency will hopenfully be fixed, or implement
 the following workaround.
 
 Workaround:
-Open a terminal and type
+Open a terminal and type (note that the first command might result in an error message, which can be ignored)
 ```
+  sudo systemctl disable pt-input
   cd
   cd .config/openbox
   cp lxde-pi-rc.xml lxde-pi-rc.xml.backup
@@ -141,6 +142,8 @@ Open a terminal and type
 Search for brightness in this file.
 Change the line *<command>brightness decrease</command>* to *<command>pt-brightness -d</command>*
 and a bit further down *<command>brightness increase</command>* to *<command>pt-brightness -i</command>*
+
+Reboot your pi-top.
 
 If you want to undo this change, you can open a terminal and type
 ```
