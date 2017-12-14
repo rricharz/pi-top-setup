@@ -1,4 +1,4 @@
 #!/bin/bash
-# pt-log:Show log of pt-device-manager (current boot), exclude unneccessary lines
+# pt-log:Show log of pt-device-manager (since yesterday), exclude unneccessary lines, make lines shorter
 
 journalctl -u pt-device-manager --since=yesterday | grep -v GET_BATTERY_STATE | sed 's/\/usr\/lib\/pt-device-manager\///g'
