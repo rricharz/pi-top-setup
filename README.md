@@ -176,6 +176,10 @@ Open a terminal and type
   ./uninstall
 ```
 
+**Using the analogue Pins of the pi-topPROTO+ board with Raspbian Stretch**
+
+A short description is enclosed, See [pi-topPROTO+](http:github.com/rricharz/pi-top-setup/ProtoPlus.pdf)
+
 
 Please open an issue in this repository or write to rricharz77@gmail.com if you have any feedback
 or problem with this repository. Your input is appreciated.
