@@ -179,6 +179,7 @@ Open a terminal and type
 **Additional documents describing how to use your pi-top**
 
 [Using the analogue inputs of the pi-topPROTO+ with python](http:github.com/rricharz/pi-top-setup/blob/master/documents/ProtoPlus.pdf)
+
 [Problems with an attached USB stick](http:github.com/rricharz/pi-top-setup/blob/master/documents/use_of_usb_stick.txt)
 
 
