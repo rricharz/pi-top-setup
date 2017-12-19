@@ -176,9 +176,10 @@ Open a terminal and type
   ./uninstall
 ```
 
-**Using the analogue Pins of the pi-topPROTO+ board with Raspbian Stretch**
+**Additional documents describing how to use your pi-top**
 
-A short description is enclosed, See [pi-topPROTO+](http:github.com/rricharz/pi-top-setup/blob/master/ProtoPlus.pdf)
+[Using the analogue inputs of the pi-topPROTO+ with python](http:github.com/rricharz/pi-top-setup/blob/master/documents/ProtoPlus.pdf)
+[Problems with an attached USB stick](http:github.com/rricharz/pi-top-setup/blob/master/documents/use_of_usb_stick.txt)
 
 
 Please open an issue in this repository or write to rricharz77@gmail.com if you have any feedback
