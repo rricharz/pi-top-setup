@@ -98,7 +98,7 @@ Downloads. This makes future upgrading or uninstalling easier.
 ![Alt text](config.png?raw=true "menu item")
 
 
-**Additional tools to debug problems with the device manager**
+**Additional tools**
 
 If you install pi-top Configuration (instructions above), the following additional
 tools are also installed: 
@@ -109,6 +109,14 @@ tools are also installed:
 pt-device-manager.
 
 *audiotest* plays a short sound on the speaker.
+
+The following command allows to turn the internal touchpad of the pi-top
+version 2 off until the next boot, if you are using an external mouse, and are
+bothered by unwanted mouse actions.
+
+*touchpad off* turns it off until the next boot
+
+*touchpad on* turns it back on without a new boot
 
 Example output of *pt-devices*:
 ```

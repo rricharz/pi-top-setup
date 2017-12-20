@@ -23,3 +23,7 @@ cp tools/audiotest ~/bin
 chmod +x ~/bin/audiotest
 echo "audiotest has been installed"
 
+cp tools/touchpad ~/bin
+chmod +x ~/bin/touchpad
+echo "touchpad has been installed"
+

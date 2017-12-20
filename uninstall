@@ -13,3 +13,6 @@ echo "pt-devices has been unistalled"
 rm ~/bin/audiotest
 echo "audiotest has been unistalled"
 
+rm ~/bin/touchpad
+echo "touchpad has been unistalled"
+
