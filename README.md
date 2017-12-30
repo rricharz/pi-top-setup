@@ -191,5 +191,10 @@ Open a terminal and type
 [Problems with an attached USB stick](http:github.com/rricharz/pi-top-setup/blob/master/documents/use_of_usb_stick.txt)
 
 
+**What to do if bluetooth does not work after installing pt-pulse**
+
+See the workaround at the bottom of [pi-topPULSE](https://github.com/pi-top/pi-topPULSE).
+
+
 Please open an issue in this repository or write to rricharz77@gmail.com if you have any feedback
 or problem with this repository. Your input is appreciated.
