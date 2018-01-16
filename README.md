@@ -198,3 +198,7 @@ See the workaround at the bottom of [pi-topPULSE](https://github.com/pi-top/pi-t
 
 Please open an issue in this repository or write to rricharz77@gmail.com if you have any feedback
 or problem with this repository. Your input is appreciated.
+
+**Links to ther contributions for the pi-top**
+
+Mike Spivey has adapten a script that's automatically invoked by udev rules and disables the touchpad automatically, enabling it again if the mouse is umplugged. See http://spivey.oriel.ox.ac.uk/corner/Touchpad_control_for_pi-top
