@@ -184,6 +184,7 @@ Open a terminal and type
   ./uninstall
 ```
 
+
 **Additional documents describing how to use your pi-top**
 
 [Using the analogue inputs of the pi-topPROTO+ with python](http:github.com/rricharz/pi-top-setup/blob/master/documents/ProtoPlus.pdf)
@@ -191,14 +192,19 @@ Open a terminal and type
 [Problems with an attached USB stick](http:github.com/rricharz/pi-top-setup/blob/master/documents/use_of_usb_stick.txt)
 
 
+
 **What to do if bluetooth does not work after installing pt-pulse**
 
 See the workaround at the bottom of [pi-topPULSE](https://github.com/pi-top/pi-topPULSE).
 
 
+
+**Links to other contributions for the pi-top**
+
+Mike Spivey has adapten a script that's automatically invoked by udev rules and disables the touchpad automatically,
+if an external mouse is plugged in, and enabling it again if the mouse is umplugged.
+See http://spivey.oriel.ox.ac.uk/corner/Touchpad_control_for_pi-top
+
+
 Please open an issue in this repository or write to rricharz77@gmail.com if you have any feedback
 or problem with this repository. Your input is appreciated.
-
-**Links to ther contributions for the pi-top**
-
-Mike Spivey has adapten a script that's automatically invoked by udev rules and disables the touchpad automatically, enabling it again if the mouse is umplugged. See http://spivey.oriel.ox.ac.uk/corner/Touchpad_control_for_pi-top
