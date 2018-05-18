@@ -43,7 +43,7 @@ certain parameters:
 >should be automatically installed and enabled on the pi-top laptop (both versions).
 >The apt package *lxplug-ptbatt* is part of the apt package *raspberry-pi-ui-mods*.
 >If this battery icon shows up on your pi-top, installation of a separate battery widget
->is not required anymore. It will only show up if pt-hub is installed
+>is not required anymore. It will only show up if pt-device-manager is installed
 >and i2c is enabled.
 
 >If this battery icon does not show up on your pi-top, you can use the following means to
@@ -75,9 +75,8 @@ shows up if pt-device-manager has been installed and works properly.
 **Screen**
 
 On the pi-top version 2 the brightness keys work with out-of-the-box Raspbian Stretch.
-On the pi-top version 1 see *Enable the brightness keys* below.
 
-You can control the screen brightness and the timeout before the screen blanks with
+You can control the screen brightness and the timeout before the screen blanks also with
 the command pt-brightness. To get information on how to use pt-brightness, type
 
 ```
