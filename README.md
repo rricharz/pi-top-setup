@@ -168,7 +168,7 @@ Open a terminal and type
 See the workaround at the bottom of [pi-topPULSE](https://github.com/pi-top/pi-topPULSE).
 
 
-**How to upgrade pt-device-manager if you had installed eralier versions of pt-hub**
+**How to upgrade pt-device-manager if you had installed earlier versions of pt-hub**
 
 First, uninstall the existing pt-device-manager software (earlier than May 18, 2018)
 with the following commands:
