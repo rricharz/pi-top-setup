@@ -65,9 +65,11 @@ for each parameter)
   Wattage: 0
 ```
 
-If you prefer to see a battery icon with the current charge of the battery in the
-system tray section of the desktop panel, you can install
-[pi-top-battery-widget](http:github.com/rricharz/pi-top-battery-widget)
+If you do not see a battery icon on the desktop panel after the next bootup, proceed as follows:
+Right click at an empty spot on the desktop panel, and choose "add/remove panel items". Click on
+Battery (pi-top/laptop) and click "add". Now you can move the battery icon to your preferred
+position with "Up" and "Down", then close the Panel Preferences window. The battery icon only
+shows up if pt-device-manager has been installed and works properly.
 
 
 **Screen**
