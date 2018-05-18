@@ -20,16 +20,15 @@ also supports pushing the power button for a second as a means to turn the pi-to
 > Device manager. See the instructions for uninstalling them at the links above. 
 
 The pi-top Device Manager is automatically installed with the latest software for the pi-topSPEAKER or
-pi-topPULSE. It can also be installed with the following commands:
+pi-topPULSE. It can also be installed with the following commands.
  
 ```
   sudo apt update
   sudo apt upgrade
-  sudo apt install pt-hub
-  sudo systemctl disable pt-display
+  sudo apt install pt-device-manager
 ```
-If you want to understand the consequences of the last line above (disable pt-display),
-see issue #2 in this repository.
+
+If you had installed pt-hub earlier, see at the bottom of this page on how to upgrade your software.
 
 If you are installing this software on a pi-top rev 1 or pi-topCEED, make sure that spi
 is enabled in menu->Preferences->Raspberry Pi Configuration.
@@ -132,39 +131,6 @@ Example output of *pt-devices*:
   pi@pitop:~ $
 ```
 
-
-**Enable the brightness keys on the pi-top (version 1) keyboard**
-
-Unfortunately Raspbian Stretch 2017-11-29 introduced a small inconsistency
-with the pi-top device management software affecting the brightness keys on
-the pi-top (version 1). It is unclear at present how and when this will be fixed.
-You can wait until this inconsistency will hopenfully be fixed, or implement
-the following workaround.
-
-Workaround:
-Open a terminal and type (note that the first command might result in an error message, which can be ignored)
-```
-  sudo systemctl disable pt-input
-  cd
-  cd .config/openbox
-  cp lxde-pi-rc.xml lxde-pi-rc.xml.backup
-  sudo leafpad lxde-pi-rc.xml
-```
-
-Search for brightness in this file.
-Change the line *<command>brightness decrease</command>* to *<command>pt-brightness -d</command>*
-and a bit further down *<command>brightness increase</command>* to *<command>pt-brightness -i</command>*
-
-Reboot your pi-top.
-
-If you want to undo this change, you can open a terminal and type
-```
-  cd
-  cd .config/openbox
-  cp lxde-pi-rc.xml.backup lxde-pi-rc.xml
-```
-
-
 **To update pi-top Configuration to the latest version**
 
 Open a terminal and type
@@ -201,6 +167,24 @@ Open a terminal and type
 
 See the workaround at the bottom of [pi-topPULSE](https://github.com/pi-top/pi-topPULSE).
 
+
+**How to upgrade pt-device-manager if you had installed eralier versions of pt-hub**
+
+First, uninstall the existing pt-device-manager software (earlier than May 18, 2018)
+with the following commands:
+```
+  sudo apt update
+  sudo apt purge pt-hub pt-device-manager
+  sudo apt autoremove
+```
+
+Do not reboot right now, but install the latest version:
+```
+  sudo apt install pt-device-manager
+  sudo apt upgrade
+```
+
+Now you can reboot your pi-top.
 
 
 **Links to other contributions for the pi-top**
