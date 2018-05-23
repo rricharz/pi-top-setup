@@ -28,7 +28,17 @@ pi-topPULSE. It can also be installed with the following commands.
   sudo apt install pt-device-manager
 ```
 
-If you had installed pt-hub earlier, see at the bottom of this page on how to upgrade your software.
+> **Important!**
+> If you had installed pt-hub earlier, see at the bottom of this page on how to upgrade your software.
+
+With the latest release of the pt-device-manager software, it is now also possible to install
+the software using Raspbian Lite. If you are using Raspbian Lite, type the following command
+after installing the pt-device-manager as described above. This command is not required if
+you install the device manager on the full Raspberry Pi Dekstop.
+
+```
+  sudo systemctl start pt-device-manager
+```
 
 If you are installing this software on a pi-top rev 1 or pi-topCEED, make sure that spi
 is enabled in menu->Preferences->Raspberry Pi Configuration.
@@ -83,8 +93,8 @@ the command pt-brightness. To get information on how to use pt-brightness, type
   pt-brightness -h
 ``` 
 
-If you prefer to adjust brightness and screen blanking using sliders and buttons, you
-can install pi-top Configuration from this repository as follows
+If you prefer to adjust brightness and screen blanking using sliders and buttons using
+the Raspberry Pi Desktop, you can install pi-top Configuration from this repository as follows
 
 ```
   cd
