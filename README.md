@@ -23,9 +23,9 @@ The pi-top Device Manager is automatically installed with the latest software fo
 pi-topPULSE. It can also be installed with the following commands.
  
 ```
-  sudo apt update
-  sudo apt upgrade
-  sudo apt install pt-device-manager
+  sudo apt-get update
+  sudo apt-get upgrade
+  sudo apt-get install pt-device-manager
 ```
 
 > **Important!**
@@ -184,15 +184,15 @@ See the workaround at the bottom of [pi-topPULSE](https://github.com/pi-top/pi-t
 First, uninstall the existing pt-device-manager software (earlier than May 18, 2018)
 with the following commands:
 ```
-  sudo apt update
-  sudo apt purge pt-hub pt-device-manager
-  sudo apt autoremove
+  sudo apt-get update
+  sudo apt-get purge pt-hub pt-device-manager
+  sudo apt-get autoremove
 ```
 
 Do not reboot right now, but install the latest version:
 ```
-  sudo apt install pt-device-manager
-  sudo apt upgrade
+  sudo apt-get install pt-device-manager
+  sudo apt-get upgrade
 ```
 
 Now you can reboot your pi-top.
