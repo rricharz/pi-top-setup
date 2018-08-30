@@ -17,7 +17,7 @@ also supports pushing the power button for a second as a means to turn the pi-to
 > [pi-top-install](http:github.com/rricharz/pi-top-install) or
 > [pi-top-battery-status](http:github.com/rricharz/pi-top-battery-status),
 > they should not be used together with the
-> Device manager. See the instructions for uninstalling them at the links above. 
+> Device manager. See the instructions for uninstalling them at the links above.
 
 The pi-top Device Manager is automatically installed with the latest software for the pi-topSPEAKER or
 pi-topPULSE. It can also be installed with the following commands.
@@ -31,14 +31,12 @@ pi-topPULSE. It can also be installed with the following commands.
 > **Important!**
 > If you had installed pt-hub earlier, see at the bottom of this page on how to upgrade your software.
 
-With the latest release of the pt-device-manager software, it is now also possible to install
-the software using Raspbian Lite. If you are using Raspbian Lite, type the following command
-after installing the pt-device-manager as described above. This command is not required if
-you install the device manager on the full Raspberry Pi Dekstop.
-
-```
-  sudo systemctl start pt-device-manager
-```
+With the latest release of the pt-device-manager software, it is also possible to install
+the software using Raspbian Lite, even so this is not recommended.
+**If you are using Raspbian Lite, do not turn off or
+reboot your pi-top after installing the pt-device-manager! Instead, type 'sudo raspi-config'
+then use 'boot options' and 'Desktop/CLI' to set your bootup to Console.** Afterwards, you
+can reboot your pi-top.
 
 If you are installing this software on a pi-top rev 1 or pi-topCEED, make sure that spi
 is enabled in menu->Preferences->Raspberry Pi Configuration.
