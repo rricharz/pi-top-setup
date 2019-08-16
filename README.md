@@ -1,7 +1,7 @@
 # pi-top-setup
 
-This repository includes information and programs to use Raspbian Buster and Raspbian Stretch on the pi-top [2] laptop
-and the pi-topCEED.
+This repository includes information and programs to use Raspbian Buster and Raspbian Stretch on the pi-top laptop
+and the pi-topCEED (pi-top [1], pi-top [2] and pi-top [3]).
 
 The help of @pi-top and especially @m-roberts to get this to work is very much appreciated.
 
