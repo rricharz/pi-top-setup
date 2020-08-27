@@ -27,6 +27,9 @@ pi-topPULSE. It can also be installed with the following commands.
   sudo apt-get upgrade
   sudo apt-get install pt-device-manager
 ```
+> **Important!**
+> Several users have reported, that pt-device-manager does not work
+> properly for them when using a Raspberry Pi 4. See the open issue #9.
 
 With the latest release of the pt-device-manager software, it is also possible to install
 the software using Raspbian Lite, even so this is not recommended.
