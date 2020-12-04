@@ -6,43 +6,13 @@ and the pi-topCEED (pi-top [1], pi-top [2] and pi-top [3]).
 The help of @pi-top and especially @m-roberts to get this to work is very much appreciated.
 
 The pi-top Device Manager, which handles the pi-top hardware (hub) and the pi-top accessories
-(pi-topSPEAKER and pi-topPULSE) is available for Raspbian Buster and Raspbian Stretch. This is the recommended
-way to use the pi-top with Raspbian. The documentation can be found at the
-[pi-top repository](http:github.com/pi-top). You can also find instructions there on how to install
-the pi-topSPEAKER, pi-topPULSE and Alexa service. The pi-top Device Manager
-also supports pushing the power button for a second as a means to turn the pi-top off.
+(pi-topSPEAKER and pi-topPULSE) is available for Raspbian Buster and Raspbian Stretch.
 
-> **Important!**
-> If you have used
-> [pi-top-install](http:github.com/rricharz/pi-top-install) or
-> [pi-top-battery-status](http:github.com/rricharz/pi-top-battery-status),
-> they should not be used together with the
-> Device manager. See the instructions for uninstalling them at the links above.
+**Installing the pi-top device manager**
 
-The pi-top Device Manager is automatically installed with the latest software for the pi-topSPEAKER or
-pi-topPULSE. It can also be installed with the following commands.
- 
-```
-  sudo apt-get update
-  sudo apt-get upgrade
-  sudo apt-get install pt-device-manager
-```
-> **Important!**
-> Several users have reported, that pt-device-manager does not work
-> properly for them when using a Raspberry Pi 4. See the open issue #9.
+See instruction details at
 
-With the latest release of the pt-device-manager software, it is also possible to install
-the software using Raspbian Lite, even so this is not recommended.
-**If you are using Raspbian Lite, do not turn off or
-reboot your pi-top after installing the pt-device-manager! Instead, type 'sudo raspi-config'
-then use 'boot options' and 'Desktop/CLI' to set your bootup to Console.** Afterwards, you
-can reboot your pi-top.
-
-If you are installing this software on a pi-top [1] or pi-topCEED, make sure that spi
-is enabled in menu->Preferences->Raspberry Pi Configuration.
-
-Once the software is installed, you can obtain information from the pi-top hardware, and change
-certain parameters:
+[pi-top knowledge base](https://knowledgebase.pi-top.com/knowledge/pi-top-and-raspberry-pi-os)
 
 
 **Battery**
