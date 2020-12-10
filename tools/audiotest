@@ -1,4 +1,0 @@
-#!/bin/bash
-# audiotest: play a short audio file on alsa audio
-
-aplay /usr/share/scratch/Media/Sounds/Instruments/Chord.wav
